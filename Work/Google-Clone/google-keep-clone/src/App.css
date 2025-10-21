@@ -1,71 +1,119 @@
+.app {
+  min-height: 100vh;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.app-overlay {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+}
+
+.app-main {
+  padding-bottom: 32px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-main > * {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* =========================================== */
 /* --- SIMPLE HIGH-CONTRAST DARK MODE --- */
 /* =========================================== */
 
-.app {
-  min-height: 100vh; /* THIS IS THE FIX */
-  background-color: #fff; /* The default background for light mode */
-}
-
-/* --- Main App Background --- */
 .app.dark-mode {
-  background-color: #121212; /* A standard, very dark background */
+  background-color: #121212;
 }
 
-/* --- Header --- */
+.app.dark-mode .app-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .app.dark-mode .header {
-  background-color: #1E1E1E; /* Slightly lighter to stand out */
+  background-color: #1E1E1E;
   border-bottom-color: #333;
 }
 
 .app.dark-mode .header-title {
-  color: #E0E0E0; /* Light grey text */
+  color: #E0E0E0;
 }
 
-/* --- Navigation & Theme Buttons --- */
 .app.dark-mode .nav-button {
-  color: #9E9E9E; /* Muted grey for inactive */
+  color: #9E9E9E;
 }
 
 .app.dark-mode .nav-button.active {
   background-color: #333;
-  color: #FFFFFF; /* Pure white for active */
+  color: #FFFFFF;
 }
 
-.app.dark-mode .space-mode-toggle { /* This class name is still used for the button */
+.app.dark-mode .space-mode-toggle,
+.app.dark-mode .header-action-btn {
   border-color: #9E9E9E;
   color: #9E9E9E;
 }
 
-.app.dark-mode .space-mode-toggle:hover {
+.app.dark-mode .space-mode-toggle:hover,
+.app.dark-mode .header-action-btn:hover {
   background-color: #333;
   border-color: #E0E0E0;
   color: #E0E0E0;
 }
 
-/* --- NoteForm & Note Cards --- */
 .app.dark-mode .note-form,
 .app.dark-mode .note {
   background-color: #1E1E1E;
   border-color: #444;
 }
 
-/* --- Text and Inputs --- */
 .app.dark-mode .note-form-input,
 .app.dark-mode .note-form-textarea,
-.app.dark-mode .note-title,
-.app.dark-mode .note-content,
 .app.dark-mode .note-edit-input,
 .app.dark-mode .note-edit-textarea {
-  color: #FFFFFF; /* Pure white text for high contrast */
+  color: #FFFFFF;
 }
+
+/* This rule below is no longer needed since Note.js now handles text color with inline styles.
+   It's safe to keep, but the inline style will override it.
+.app.dark-mode .note-title,
+.app.dark-mode .note-content {
+  color: #FFFFFF; 
+}
+*/
 
 .app.dark-mode .note-form-input::placeholder,
 .app.dark-mode .note-form-textarea::placeholder {
-  color: #757575; /* Lighter placeholder */
+  color: #757575;
 }
 
-/* --- Secondary & Action Buttons --- */
 .app.dark-mode .note-form-button-secondary,
 .app.dark-mode .note-button-cancel,
 .app.dark-mode .note-action-btn {
@@ -78,7 +126,12 @@
   background-color: #333;
 }
 
-/* --- Empty Notes Message --- */
 .app.dark-mode .notes-empty {
-  color: #757575; /* Muted grey */
+  color: #757575;
+}
+
+/* --- THIS IS THE FIX FOR PROBLEM #2 --- */
+.app.dark-mode .color-palette {
+  background-color: #282828;
+  border-color: #555;
 }

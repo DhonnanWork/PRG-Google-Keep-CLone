@@ -28,23 +28,6 @@
   letter-spacing: 0.25px;
 }
 
-.space-mode-toggle {
-  margin-left: auto; /* Pushes the button to the right */
-  padding: 8px 16px;
-  border: 1px solid #5f6368;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #5f6368;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.space-mode-toggle:hover {
-  background-color: #f1f3f4;
-}
-
-/* Add these styles to the file */
 .nav-buttons {
   margin: 0 auto;
 }
@@ -62,4 +45,37 @@
 .nav-button.active {
   background-color: #e8f0fe;
   color: #1967d2;
+}
+
+.header-actions {
+  display: flex;
+  gap: 8px;
+  margin-right: 16px; /* Spacing between BG buttons and Dark Mode button */
+}
+
+.header-action-btn {
+  padding: 6px 12px;
+  border: 1px solid #5f6368;
+  color: #5f6368;
+  background-color: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.space-mode-toggle {
+  margin-left: 0; /* Remove margin-left: auto */
+  padding: 8px 16px;
+  border: 1px solid #5f6368;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #5f6368;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.space-mode-toggle:hover,
+.header-action-btn:hover {
+  background-color: #f1f3f4;
 }

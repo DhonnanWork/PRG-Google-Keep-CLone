@@ -6,6 +6,11 @@
   transition: box-shadow 0.2s, transform 0.2s;
   break-inside: avoid;
   cursor: pointer;
+  border-left: 3px solid transparent;
+}
+
+.note.pinned {
+  border-left-color: #fbc02d;
 }
 
 .note:hover {
@@ -21,32 +26,29 @@
 .note-title {
   font-size: 16px;
   font-weight: 500;
-  color: #202124;
   margin-bottom: 12px;
   word-wrap: break-word;
 }
 
 .note-content {
   font-size: 14px;
-  color: #202124;
   line-height: 1.5;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
+/* --- THIS IS THE FIX --- */
 .note-actions {
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   margin-top: 12px;
-  opacity: 0;
+  opacity: 1; /* Always visible, no longer hidden */
   transition: opacity 0.2s;
 }
+/* The .note:hover .note-actions rule has been removed */
 
-.note:hover .note-actions {
-  opacity: 1;
-}
 
-.note-delete {
+.note-action-btn {
   background: none;
   border: none;
   padding: 8px;
@@ -59,11 +61,40 @@
   justify-content: center;
 }
 
-.note-delete:hover {
+.note-action-btn:hover {
   background-color: #f1f3f4;
 }
 
-/* Edit Mode Styles */
+.pin-btn {
+  margin-right: auto;
+}
+
+.color-palette-container {
+  position: relative;
+}
+
+.color-palette {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
 .note-edit {
   display: flex;
   flex-direction: column;
@@ -78,9 +109,9 @@
   padding: 8px 12px;
   font-family: 'Google Sans', 'Roboto', Arial, sans-serif;
   font-size: 14px;
-  color: #202124;
   outline: none;
   transition: border-color 0.2s;
+  background-color: transparent;
 }
 
 .note-edit-input {
@@ -130,24 +161,5 @@
 }
 
 .note-button-cancel:hover {
-  background-color: #f1f3f4;
-}
-
-/* Find .note-delete and rename it to .note-action-btn */
-/* Also apply it to the new archive/unarchive buttons */
-.note-action-btn {
-  background: none;
-  border: none;
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-  color: #5f6368;
-  transition: background-color 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.note-action-btn:hover {
   background-color: #f1f3f4;
 }
