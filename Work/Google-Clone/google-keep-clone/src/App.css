@@ -1,0 +1,84 @@
+/* =========================================== */
+/* --- SIMPLE HIGH-CONTRAST DARK MODE --- */
+/* =========================================== */
+
+.app {
+  min-height: 100vh; /* THIS IS THE FIX */
+  background-color: #fff; /* The default background for light mode */
+}
+
+/* --- Main App Background --- */
+.app.dark-mode {
+  background-color: #121212; /* A standard, very dark background */
+}
+
+/* --- Header --- */
+.app.dark-mode .header {
+  background-color: #1E1E1E; /* Slightly lighter to stand out */
+  border-bottom-color: #333;
+}
+
+.app.dark-mode .header-title {
+  color: #E0E0E0; /* Light grey text */
+}
+
+/* --- Navigation & Theme Buttons --- */
+.app.dark-mode .nav-button {
+  color: #9E9E9E; /* Muted grey for inactive */
+}
+
+.app.dark-mode .nav-button.active {
+  background-color: #333;
+  color: #FFFFFF; /* Pure white for active */
+}
+
+.app.dark-mode .space-mode-toggle { /* This class name is still used for the button */
+  border-color: #9E9E9E;
+  color: #9E9E9E;
+}
+
+.app.dark-mode .space-mode-toggle:hover {
+  background-color: #333;
+  border-color: #E0E0E0;
+  color: #E0E0E0;
+}
+
+/* --- NoteForm & Note Cards --- */
+.app.dark-mode .note-form,
+.app.dark-mode .note {
+  background-color: #1E1E1E;
+  border-color: #444;
+}
+
+/* --- Text and Inputs --- */
+.app.dark-mode .note-form-input,
+.app.dark-mode .note-form-textarea,
+.app.dark-mode .note-title,
+.app.dark-mode .note-content,
+.app.dark-mode .note-edit-input,
+.app.dark-mode .note-edit-textarea {
+  color: #FFFFFF; /* Pure white text for high contrast */
+}
+
+.app.dark-mode .note-form-input::placeholder,
+.app.dark-mode .note-form-textarea::placeholder {
+  color: #757575; /* Lighter placeholder */
+}
+
+/* --- Secondary & Action Buttons --- */
+.app.dark-mode .note-form-button-secondary,
+.app.dark-mode .note-button-cancel,
+.app.dark-mode .note-action-btn {
+  color: #9E9E9E;
+}
+
+.app.dark-mode .note-form-button-secondary:hover,
+.app.dark-mode .note-button-cancel:hover,
+.app.dark-mode .note-action-btn:hover {
+  background-color: #333;
+}
+
+/* --- Empty Notes Message --- */
+.app.dark-mode .notes-empty {
+  color: #757575; /* Muted grey */
+}

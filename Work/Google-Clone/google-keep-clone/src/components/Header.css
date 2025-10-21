@@ -1,0 +1,65 @@
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.header-title {
+  font-size: 22px;
+  font-weight: 400;
+  color: #5f6368;
+  letter-spacing: 0.25px;
+}
+
+.space-mode-toggle {
+  margin-left: auto; /* Pushes the button to the right */
+  padding: 8px 16px;
+  border: 1px solid #5f6368;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #5f6368;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.space-mode-toggle:hover {
+  background-color: #f1f3f4;
+}
+
+/* Add these styles to the file */
+.nav-buttons {
+  margin: 0 auto;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #5f6368;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nav-button.active {
+  background-color: #e8f0fe;
+  color: #1967d2;
+}
